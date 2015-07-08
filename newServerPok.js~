@@ -9,7 +9,7 @@ var PORT = 6969;
 net.createServer(function(sock) {
     
     // We have a connection - a socket object is assigned to the connection automatically
-    //console.log('\n\nCONNECTED: ' + sock.remoteAddress +':'+ sock.remotePort);//last
+    console.log('\n\nCONNECTED: ' + sock.remoteAddress +':'+ sock.remotePort);
     
     // Add a 'data' event handler to this instance of socket
     sock.on('data', function(data) {

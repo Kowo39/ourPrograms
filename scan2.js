@@ -37,10 +37,33 @@ noble.on('discover', function(peripheral) {
 	var DECenumType = enumType[0];
 	
 	var step = package.slice(5,6);
+	var DECstep = step[0];
+
 	var heading = package.slice(6,8);
+	
 	var tagLogID = package.slice(8,9);
+	var DECtagLogID = tagLogID[0];	
+
 	var txPower = package.slice(9,10);
+	var DECtxPower = txPower[0];
+	
 	var tagSqNo = package.slice(10,11);
+	var DECtagSqNo = tagSqNo[0];
+
+//--------------------------------------------------
+
+//function getRGB(package) {
+
+var commaSeperated = '';
+	var package = package.substring(1, package.length);
+	for (var i = 0; i < package.length; i++) {
+	commaSeperated += (i % 2 ==1 && i != (package.length - 1)) ? ',' : '';
+	}
+//	return commaSeperated.split(',');
+	console.log('-------------------------------------------aaaaaaaaaaaaaaaaaaaa');	
+//}
+
+	
 		
 	
 		if( localName == "Kontakt") { 	
@@ -51,11 +74,11 @@ noble.on('discover', function(peripheral) {
 			console.log('Data Type: ', DECdataType);
 			console.log('Data Lenght: ', DECdataLength);
 			console.log('Enum Type: ', DECenumType);
-			console.log('Step Count: ', step);
+			console.log('Step Count: ', DECstep);
 			console.log('Heading: ', heading);
-			console.log('Tag Logical ID: ', tagLogID);
-			console.log('txPower: ', txPower);
-			console.log('Tag Sequence Number: ', tagSqNo);
+			console.log('Tag Logical ID: ', DECtagLogID);
+			console.log('txPower: ', DECtxPower);
+			console.log('Tag Sequence Number: ', DECtagSqNo);
 			console.log('- - - - - - - - - - - - - - - -');
 			sleep(1000);
 			//console.log('\033[2J');

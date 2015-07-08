@@ -25,7 +25,7 @@ noble.on('discover', function(peripheral) {
 		var client = new net.Socket();
 		client.connect(PORT, HOST, function() {
 
-		client.write('\nmac add is:' + macAdress);
+		client.write('\n\n\nmac add is:' + macAdress);
 		client.write('\nrss add is:' + rss);
 		client.write('\nlocalname is:' + localName);	
 		// client.write('\npackage is:' + package);
@@ -33,16 +33,16 @@ noble.on('discover', function(peripheral) {
 
 		// Add a 'data' event handler for the client socket
 		// data is what the server sent to this socket
-		client.on('data', function(data) {
+		//client.on('data', function(data) {
 				    
-		console.log('DATA: ' + data);
+		//console.log('DATA: ' + data);
 		 // Close the client socket completely
-		client.destroy();
-		});		    
+		//client.destroy();
+		//});		    
 		
 
 		// Add a 'close' event handler for the client socket
-		Client.on('close', function() {
+		client.on('close', function() {
 		console.log('Connection closed');
 		});		
 });
