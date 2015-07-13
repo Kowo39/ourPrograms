@@ -1,13 +1,13 @@
 var noble = require('noble');
 
-function sleep(milliseconds) {
-	var start = new Date().getTime();
-		for (var i= 0; i < 1e7; i++) {
-			if ((new Date().getTime() - start) > milliseconds) { 
-			break;
-			}
-	}
-}
+//function sleep(milliseconds) {
+//	var start = new Date().getTime();
+//		for (var i= 0; i < 1e7; i++) {
+//			if ((new Date().getTime() - start) > milliseconds) { 
+//			break;
+//			}
+//	}
+//}
 
 noble.on('stateChange', function(state) {
   if (state === 'poweredOn') {
@@ -65,7 +65,7 @@ noble.on('discover', function(peripheral) {
 			console.log('txPower: ', DECtxPower);
 			console.log('Tag Sequence Number: ', DECtagSqNo);
 			console.log('- - - - - - - - - - - - - - - -');
-			sleep(1000);
+			//sleep(1000);
 			//console.log('\033[2J');
 		}
 

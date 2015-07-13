@@ -9,6 +9,16 @@ function sleep(milliseconds) {
 	}
 }
 
+
+
+function pok() {
+console.log('hej ju');
+noble.stopScanning();
+}
+
+
+
+
 noble.on('stateChange', function(state) {
   if (state === 'poweredOn') {
     noble.startScanning([], true);
@@ -17,7 +27,14 @@ noble.on('stateChange', function(state) {
   }
 });
 
+
+
+
+
+
 noble.on('discover', function(peripheral) {
+	pok();
+	sleep(1000);
 	var macAdress = peripheral.address;
 	var rss = peripheral.rssi;
 	var localName = peripheral.advertisement.localName;
